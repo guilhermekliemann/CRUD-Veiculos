@@ -1,0 +1,11 @@
+create table marca (
+    marca_id int primary key auto_increment,
+    descricao varchar(60) not null
+);
+
+create table modelo (
+    modelo_id int primary key auto_increment,
+    descricao varchar(60) not null,
+    marca_id int not null,
+    constraint fk_modelo_marca foreign key (marca_id) references marca(marca_id)
+);
